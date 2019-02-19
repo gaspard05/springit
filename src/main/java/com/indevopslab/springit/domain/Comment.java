@@ -7,12 +7,18 @@ import javax.persistence.ManyToOne;
 
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
 @Entity
+@RequiredArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
-public class Comment {
+public class Comment extends Auditable{
 
 	@Id
 	@GeneratedValue
@@ -21,5 +27,6 @@ public class Comment {
 	
 	//Link
 	@ManyToOne
+	@NonNull
 	private Link link;
 }
