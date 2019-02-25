@@ -45,6 +45,9 @@ public class DatabaseLoader implements CommandLineRunner {
 	            linkRepository.save(link);
 	            //We do Comment later
 	        });
+	        
+	        long linkCount = linkRepository.count();
+	        System.out.println("Number of links in database: " + linkCount);
 	}
 
 }
