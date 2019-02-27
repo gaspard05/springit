@@ -10,18 +10,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
 import com.indevopslab.springit.service.BeanUtil;
 import java.net.URI;
 import java.net.URISyntaxException;
+import lombok.*;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @RequiredArgsConstructor
@@ -35,8 +33,12 @@ public class Link  extends Auditable{
 	private Long id;
 	
 	@NonNull
+	@NotEmpty(message = "Please enter a title")
 	private String title;
+	
 	@NonNull
+	@NotEmpty(message = "Pleaase enter url.")
+	@URL(message = "Please enter a valid url.")
 	private String url;
 	
 	//Comments
