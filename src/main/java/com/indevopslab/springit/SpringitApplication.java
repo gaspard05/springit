@@ -11,7 +11,6 @@ import com.indevopslab.springit.config.SpringitProperties;
 
 @SpringBootApplication
 @EnableConfigurationProperties(SpringitProperties.class)
-@EnableJpaAuditing
 public class SpringitApplication {
 	
 	public static void main(String[] args) {
