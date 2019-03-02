@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layouts/main_layout::head(title ='Springit - Spring Reddit Clone')}">
 </head>
 <body>
-
+	<nav th:replace="~{layouts/main_layout::nav}"></nav>
+	<div th:replace="~{layouts/main_layout::jumbotron}"></div>
+	<div class="container">
+		content goes here...
+	</div>
 </body>
 </html>
